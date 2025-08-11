@@ -159,7 +159,7 @@
   }
   
   .card-service {
-    @apply bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-border/50 group hover:border-primary/50;
+    @apply bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-border/50 hover:border-primary/50;
   }
   
   /* Section Variants */
