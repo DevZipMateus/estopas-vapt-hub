@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const Gallery = () => {
@@ -100,62 +102,37 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Carrossel Principal */}
-        <div className="relative max-w-4xl mx-auto">
-          <Carousel className="w-full">
+        {/* Carrossel de Cards */}
+        <div className="flex justify-center">
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            className="w-full max-w-5xl"
+          >
             <CarouselContent>
               {galleryImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      loading={index === 0 ? "eager" : "lazy"}
-                    />
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-2">
+                    <Card className="overflow-hidden">
+                      <CardContent className="p-0">
+                        <div className="aspect-square overflow-hidden">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                            loading={index === 0 ? "eager" : "lazy"}
+                          />
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
-
-          {/* Indicadores de posição */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {galleryImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                  index === currentIndex ? 'bg-primary' : 'bg-gray-300'
-                }`}
-                aria-label={`Ir para imagem ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Grid de miniaturas */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {galleryImages.slice(0, 12).map((image, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`relative aspect-square overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'ring-4 ring-primary shadow-lg' 
-                  : 'hover:ring-2 hover:ring-primary/50 hover:shadow-md'
-              }`}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          ))}
         </div>
       </div>
     </section>
