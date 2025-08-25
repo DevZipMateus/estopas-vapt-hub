@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
@@ -114,10 +113,6 @@ const Gallery = () => {
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                       loading={index === 0 ? "eager" : "lazy"}
                     />
-                    {/* Overlay com informações */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                      <h3 className="text-white text-lg font-semibold">{image.alt}</h3>
-                    </div>
                   </div>
                 </CarouselItem>
               ))}
