@@ -18,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+    <section id="inicio" className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
@@ -34,15 +34,15 @@ const Hero = () => {
         </div>
         
         {/* Main Title */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up in-view">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-6 animate-fade-in-up in-view">
           Transformando 
           <span className="block text-gradient-primary mt-2">Resíduos</span>
-          <span className="block text-white mt-2">em Soluções</span>
+          <span className="block text-black mt-2">em Soluções</span>
           <span className="block text-gradient-primary mt-2">Sustentáveis</span>
         </h1>
         
         {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up in-view">
+        <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up in-view">
           Há mais de 20 anos produzindo estopas industriais de alta qualidade 
           e produtos químicos automotivos, sempre com foco na sustentabilidade, 
           agilidade e atendimento personalizado.
@@ -59,7 +59,7 @@ const Hero = () => {
           </button>
           <button 
             onClick={handleServicesClick} 
-            className="border-2 border-white text-white hover:bg-white hover:text-black font-bold px-10 py-4 rounded-lg transition-all duration-300 text-lg"
+            className="border-2 border-black text-black hover:bg-black hover:text-white font-bold px-10 py-4 rounded-lg transition-all duration-300 text-lg"
           >
             Nossos Produtos
           </button>
@@ -69,15 +69,15 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in-up in-view">
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-primary mb-2">+20</div>
-            <div className="text-gray-400 text-lg">Anos de Tradição</div>
+            <div className="text-gray-600 text-lg">Anos de Tradição</div>
           </div>
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-primary mb-2">4</div>
-            <div className="text-gray-400 text-lg">Estados Atendidos</div>
+            <div className="text-gray-600 text-lg">Estados Atendidos</div>
           </div>
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-primary mb-2">100%</div>
-            <div className="text-gray-400 text-lg">Sustentável</div>
+            <div className="text-gray-600 text-lg">Sustentável</div>
           </div>
         </div>
 
